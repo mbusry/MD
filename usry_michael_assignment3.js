@@ -65,8 +65,8 @@ for (var count=0;count < words.length;count++)
 // main section
 
 console.log("I drive a " + car.make + " " + car.model + ".");
-console.log("Which is a " + car.year + ".");
+console.log("Which was made in " + car.year + ".");
 car.setEngine("stick");
-console.log(car.engine);
-var stepFive = arrFunction(roadTravels,roadTravelsLength);
-console.log(stepFive);
+console.log("If I had my choice of cars, I would drive a " + (car.engine) + endOfSentence.period);
+var travels = arrFunction(roadTravels,roadTravelsLength);
+console.log(travels);
