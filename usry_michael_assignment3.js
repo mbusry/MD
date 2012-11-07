@@ -2,6 +2,7 @@
 // SDI 1211
 // Project 3
 
+// variables
 var isItTimeToLeave = true,
 	roadTravels = ["Highway 400"," Highway 140"," Crab Apple Drive", " Highway 372"," Highway 515"],
 	roadTravelsLength = roadTravels.length,
@@ -13,11 +14,8 @@ var isItTimeToLeave = true,
 	"question": "?",
 	"comma": ",",
 	"empty": "  ",
-}
-	finalLeg = function (){
-
-			console.log("finalleg function")
-	},
+},
+	
 	car = 
 {
 	"vin": "BZT1987",
@@ -28,7 +26,9 @@ var isItTimeToLeave = true,
 		var engineType = "automatic";
 		return engineType;
 	},
+
 	 // mutator below
+	
 	"setEngine": function(newEngine){
 
 		car.engine = newEngine;
@@ -36,6 +36,29 @@ var isItTimeToLeave = true,
 	}
 
 };
+
+// Procedure Function
+var workDayProcedure = function(isItOver){
+	if (isItOver === timeToLeave)
+	{
+		// console.log("I'm working for my " + day + ".  Which is my duty and joy.");
+		return("Let's go home! step1");
+	}
+	else 
+	{
+			if (isItTimeToLeave != true)
+			{
+				return("It's not time to leave. But when I do ");
+			}
+				else 
+					{
+					return("Time to go home!");
+					};
+		// console.log("Ain't my time.");
+		return(" Ain't my time.");
+	}
+};
+
 // Array Function
 
 var arrFunction = function(words,totalCount){
@@ -64,9 +87,10 @@ for (var count=0;count < words.length;count++)
 
 // main section
 
+var beginning = workDayProcedure(4);
 console.log("I drive a " + car.make + " " + car.model + ".");
 console.log("Which was made in " + car.year + ".");
 car.setEngine("stick");
 console.log("If I had my choice of cars, I would drive a " + (car.engine) + endOfSentence.period);
 var travels = arrFunction(roadTravels,roadTravelsLength);
-console.log(travels);
+console.log(beginning + " " + travels);
