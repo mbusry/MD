@@ -44,23 +44,23 @@ var theTripHome = function(home)
 var s = 0, 
 	len = home.length,
 	sentence = "";
-	
+
 while (s < len)
 	{
 
 	sentence = sentence + countryRoadsTakeMeHome[s];
 	s++;
+
 	}
 	// return(sentence);
-console.log(sentence);
+return(sentence);
 };
 
 // Procedure Function
 var workDayProcedure = function(isItOver){
 	if (isItOver === timeToLeave)
 	{
-		// console.log("I'm working for my " + day + ".  Which is my duty and joy.");
-		return("Let's go home! step1");
+		return("I drive a " + car.make + " " + car.model + "." + " Which was made in " + car.year + "." + " It's time to go home!");
 	}
 	else 
 	{
@@ -70,9 +70,8 @@ var workDayProcedure = function(isItOver){
 			}
 				else 
 					{
-					return("Time to go home!");
+					return("Look!  It's Time to go home!");
 					};
-		// console.log("Ain't my time.");
 		return(" Ain't my time.");
 	}
 };
@@ -107,13 +106,29 @@ for (var count=0;count < words.length;count++)
 	return returnStatement;
 };
 
+// carChoice
+
+var carChoice = function(transmition,ending)
+{
+if (transmition === "stick")
+{
+return ("If I had my choice of cars, I would drive a " + transmition + ending);
+}
+else
+{
+return ("But at the moment I drive an " + transmition + ending);
+}
+
+
+};
+
 // main section
 
-var beginning = workDayProcedure(4);
-console.log("I drive a " + car.make + " " + car.model + ".");
-console.log("Which was made in " + car.year + ".");
-car.setEngine("stick");
-console.log("If I had my choice of cars, I would drive a " + (car.engine) + endOfSentence.period);
+var beginning = workDayProcedure(5);
+// console.log("I drive a " + car.make + " " + car.model + ".");
+// console.log("Which was made in " + car.year + ".");
+car.setEngine("stick"); // Mutator
+var carChoice = (car.engine, endOfSentence.period);
 var travels = arrFunction(roadTravels,roadTravelsLength);
-console.log(beginning + " " + travels + "." + ending);
 var ending = theTripHome(countryRoadsTakeMeHome);
+console.log(beginning + " " + carChoice + " " + travels + " " + ending);
