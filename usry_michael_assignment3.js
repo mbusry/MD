@@ -3,7 +3,7 @@
 // Project 3
 
 var isItTimeToLeave = true,
-	roadTravels = ["Highway 400","Highway 140","Crab Apple Drive", "Highway 372","Highway 515"],
+	roadTravels = ["Highway 400"," Highway 140"," Crab Apple Drive", " Highway 372"," Highway 515"],
 	roadTravelsLength = roadTravels.length,
 	timeToLeave = 5,
 	countryRoadsTakeMeHome = "The trip is long, but I have time to unwind.",
@@ -12,6 +12,7 @@ var isItTimeToLeave = true,
 	"period": ".",
 	"question": "?",
 	"comma": ",",
+	"empty": "  ",
 }
 	finalLeg = function (){
 
@@ -41,22 +42,24 @@ var arrFunction = function(words,totalCount){
 
 	var totalCount=totalCount + 0,
 		totalSentence = "The roads I travel are ",
-		routeLength = "I travel " + totalCount + " roads to and from work";
+		routeLength = "I travel " + totalCount + " roads to and from work.",
+		totalCount=totalCount - 1;
 
 // end of local variables
+for (var count=0;count < words.length;count++)
+	{
+	totalSentence = totalSentence + roadTravels[count];
+	if (count < totalCount) 
+		{
+        	totalSentence = totalSentence + endOfSentence.comma;
+    	} else 
+    	{
+        	totalSentence = totalSentence + endOfSentence.period;
+    	};
 
-for(var count = 0;count < words.length;count++) {
-	totalSentence = totalSentence + roadTravels[count] +
-		if (count === words.length) {
-			endOfSentence.period
-		}else {
-			endOfSentence.comma
-		}
-	}
-};
-
- return(totalSentence);
-// console.log(totalSentence);
+	};
+	returnStatement = routeLength + " " + totalSentence
+	return returnStatement;
 };
 
 // main section
@@ -66,5 +69,4 @@ console.log("Which is a " + car.year + ".");
 car.setEngine("stick");
 console.log(car.engine);
 var stepFive = arrFunction(roadTravels,roadTravelsLength);
-console.log(stepFive);
 console.log(stepFive);
