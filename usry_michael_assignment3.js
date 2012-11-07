@@ -56,9 +56,9 @@ while (s < len)
 	}
 return(sentence);
 };
-//
+// *************************
 // workDayProcedure Function
-//
+// *************************
 var workDayProcedure = function(isItOver){
 	if (isItOver === timeToLeave)
 	{
@@ -74,24 +74,24 @@ var workDayProcedure = function(isItOver){
 					{
 					console.log("Look!  It's Time to go home!");
 					};
-		// return(" Ain't my time.");
 	}
 };
-
+// **********************
 // Array Function
+// **********************
 
 var arrFunction = function(words,totalCount){
 
 // local variables
 
-	var totalCount=totalCount + 0,
+	var totalCount = totalCount + 0,
 		totalSentence = "The roads I travel are ",
 		routeLength = "I travel " + totalCount + " roads to and from work.",
-		totalCount=totalCount - 1;
+		totalCount = totalCount - 1;
 
 // end of local variables
 
-for (var count=0;count < words.length;count++)
+for (var count = 0;count < words.length;count++)
 	{
 	totalSentence = totalSentence + roadTravels[count];
 	if (count < totalCount) 
@@ -108,9 +108,9 @@ for (var count=0;count < words.length;count++)
 	return returnStatement;
 };
 
-//
+// ********************
 // main section
-//
+// ********************
 
 workDayProcedure(5);
 car.setEngine("stick"); // Mutator
