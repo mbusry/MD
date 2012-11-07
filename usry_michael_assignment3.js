@@ -23,7 +23,7 @@ var isItTimeToLeave = true,
 	"model": "Camry",
 	"year": "1999",
 	"engine": function(){
-		var engineType = "automatic";
+		var engineType = "stick";
 		return engineType;
 	},
 
@@ -37,7 +37,9 @@ var isItTimeToLeave = true,
 
 };
 
-// While Loop
+//
+// While Loop - theTripHome
+//
 
 var theTripHome = function(home)
 {
@@ -52,27 +54,27 @@ while (s < len)
 	s++;
 
 	}
-	// return(sentence);
 return(sentence);
 };
-
-// Procedure Function
+//
+// workDayProcedure Function
+//
 var workDayProcedure = function(isItOver){
 	if (isItOver === timeToLeave)
 	{
-		return("I drive a " + car.make + " " + car.model + "." + " Which was made in " + car.year + "." + " It's time to go home!");
+		console.log("I drive a " + car.make + " " + car.model + "." + " Which was made in " + car.year + "." + " It's time to go home!");
 	}
 	else 
 	{
 			if (isItTimeToLeave != true)
 			{
-				return("It's not time to leave. But when I do ");
+				console.log("It's not time to leave. But when I do ");
 			}
 				else 
 					{
-					return("Look!  It's Time to go home!");
+					console.log("Look!  It's Time to go home!");
 					};
-		return(" Ain't my time.");
+		// return(" Ain't my time.");
 	}
 };
 
@@ -106,29 +108,12 @@ for (var count=0;count < words.length;count++)
 	return returnStatement;
 };
 
-// carChoice
-
-var carChoice = function(transmition,ending)
-{
-if (transmition === "stick")
-{
-return ("If I had my choice of cars, I would drive a " + transmition + ending);
-}
-else
-{
-return ("But at the moment I drive an " + transmition + ending);
-}
-
-
-};
-
+//
 // main section
+//
 
-var beginning = workDayProcedure(5);
-// console.log("I drive a " + car.make + " " + car.model + ".");
-// console.log("Which was made in " + car.year + ".");
+workDayProcedure(5);
 car.setEngine("stick"); // Mutator
-var carChoice = (car.engine, endOfSentence.period);
 var travels = arrFunction(roadTravels,roadTravelsLength);
 var ending = theTripHome(countryRoadsTakeMeHome);
-console.log(beginning + " " + carChoice + " " + travels + " " + ending);
+console.log(travels + " " + ending);
