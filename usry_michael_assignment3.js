@@ -2,12 +2,12 @@
 // SDI 1211
 // Project 3
 
-// variables
+// Global variables
 var isItTimeToLeave = true,
 	roadTravels = ["Highway 400"," Highway 140"," Crab Apple Drive", " Highway 372"," Highway 515"],
 	roadTravelsLength = roadTravels.length,
 	timeToLeave = 5,
-	countryRoadsTakeMeHome = "The trip is long, but I have time to unwind.",
+	countryRoadsTakeMeHome = ["The"," trip", " is", " long, ", "but ", "I ", "have ", "time ", "to " , "unwind."],
 	endOfSentence = 
 {
 	"period": ".",
@@ -15,7 +15,7 @@ var isItTimeToLeave = true,
 	"comma": ",",
 	"empty": "  ",
 },
-	
+	// JSON Data
 	car = 
 {
 	"vin": "BZT1987",
@@ -27,7 +27,7 @@ var isItTimeToLeave = true,
 		return engineType;
 	},
 
-	 // mutator below
+	 // Mutator below
 	
 	"setEngine": function(newEngine){
 
@@ -35,6 +35,24 @@ var isItTimeToLeave = true,
 
 	}
 
+};
+
+// While Loop
+
+var theTripHome = function(home)
+{
+var s = 0, 
+	len = home.length,
+	sentence = "";
+	
+while (s < len)
+	{
+
+	sentence = sentence + countryRoadsTakeMeHome[s];
+	s++;
+	}
+	// return(sentence);
+console.log(sentence);
 };
 
 // Procedure Function
@@ -63,19 +81,23 @@ var workDayProcedure = function(isItOver){
 
 var arrFunction = function(words,totalCount){
 
+// local variables
+
 	var totalCount=totalCount + 0,
 		totalSentence = "The roads I travel are ",
 		routeLength = "I travel " + totalCount + " roads to and from work.",
 		totalCount=totalCount - 1;
 
 // end of local variables
+
 for (var count=0;count < words.length;count++)
 	{
 	totalSentence = totalSentence + roadTravels[count];
 	if (count < totalCount) 
 		{
         	totalSentence = totalSentence + endOfSentence.comma;
-    	} else 
+    	} 
+    	else 
     	{
         	totalSentence = totalSentence + endOfSentence.period;
     	};
@@ -93,4 +115,5 @@ console.log("Which was made in " + car.year + ".");
 car.setEngine("stick");
 console.log("If I had my choice of cars, I would drive a " + (car.engine) + endOfSentence.period);
 var travels = arrFunction(roadTravels,roadTravelsLength);
-console.log(beginning + " " + travels);
+console.log(beginning + " " + travels + "." + ending);
+var ending = theTripHome(countryRoadsTakeMeHome);
