@@ -70,7 +70,24 @@ console.log(words);
 // 
 // 
 // 
+//Does a string follow an aaa@bbb.ccc pattern like an email address?
+//
+//
+var emailCheck = function(email)
+{
+	if (email.charAt(email.length-4) === "." && email.search("@")!= -1)
+	    // for (i=0;i < email.length;i++) if (email.charAt(i)== '@')
+// if (phonenumber.length = 12 && phonenumber.charAt(7) === "-" && phonenumber.charAt(3) === "-")
+	{ 	return(email);
+	}else
+	{
+	return("Invalid email address");
+	};
+};
+ 
+var email = emailCheck("mike@apple.com");
+console.log(email);
+
 // 
-
-
-
+// 
+// 
