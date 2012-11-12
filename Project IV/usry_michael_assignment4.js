@@ -53,7 +53,8 @@ var sentenceSplit = function(words)
 {
 	var newSplit = words.split(" "),
 		newSentence = " ";
-	for (i=0;i < newSplit.length;i++){
+	for (i=0;i < newSplit.length;i++)
+		{
 		newSplit[i] = newSplit[i].charAt(0).toUpperCase() + 
 		newSplit[i].substring(1,newSplit[i].length).toLowerCase();
 		newSentence = newSentence +  newSplit[i] + " ";
@@ -65,4 +66,11 @@ var sentenceSplit = function(words)
 
 var words = sentenceSplit("this is my life");
 console.log(words);
+// 
+// 
+// 
+// 
+// 
+
+
 
