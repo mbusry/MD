@@ -52,7 +52,7 @@ console.log(www);
 var sentenceSplit = function(words)
 {
 	var newSplit = words.split(" "),
-		newSentence = " ";
+		newSentence = "";
 	for (i=0;i < newSplit.length;i++)
 		{
 		newSplit[i] = newSplit[i].charAt(0).toUpperCase() + 
@@ -64,7 +64,7 @@ var sentenceSplit = function(words)
 		return(newSentence);
 };
 
-var words = sentenceSplit("this is my life");
+var words = sentenceSplit("merry christmas");
 console.log(words);
 // 
 // 
