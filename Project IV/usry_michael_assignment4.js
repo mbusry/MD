@@ -1,22 +1,21 @@
 // Michael Usry
-//
-//
+// SDI 1211
+// Project 4: Code Library
 //
 // Phone number validation
 //
-
-var phoneNumberCheck = function(phonenumber,message)
+var myLibrary = function() 
 {
-if (phonenumber.length = 12 && phonenumber.charAt(7) === "-" && phonenumber.charAt(3) === "-")
-	{ 	return(phonenumber);
-	}else
-	{
-	return(message);
-	};
-};
- 
-var phone = phoneNumberCheck("706-455-4567","Format incorrect sent");
-console.log(phone);
+
+	var phoneNumberCheck = function(phonenumber)
+		{
+		if (phonenumber.length = 12 && phonenumber.charAt(7) === "-" && phonenumber.charAt(3) === "-")
+			{ 	return true;
+			}else
+			{
+			return false;
+			};
+		};
 //
 //
 //
@@ -27,19 +26,17 @@ console.log(phone);
 //
 //
 
-var urlCheck = function(url,message)
-{
-if (url.substring(0,4) === "http" || url.substring(0,5) === "https")
-	{ 	return(url);
-	}else
+	var urlCheck = function(url)
 	{
-	
-	return(message);
+	if (url.substring(0,4) === "http" || url.substring(0,5) === "https")
+		{ 	return true;
+		}else
+		{
+		
+		return false;
+		};
 	};
-};
- 
-var www = urlCheck("http","Invalid address");
-console.log(www);
+	 
 //
 //
 //
@@ -49,23 +46,19 @@ console.log(www);
 // newSplit is then split by " "
 // for loop
 //
-var sentenceSplit = function(words)
-{
-	var newSplit = words.split(" "),
-		newSentence = "";
-	for (i=0;i < newSplit.length;i++)
-		{
-		newSplit[i] = newSplit[i].charAt(0).toUpperCase() + 
-		newSplit[i].substring(1,newSplit[i].length).toLowerCase();
-		newSentence = newSentence +  newSplit[i] + " ";
-		
-		};
-
-		return(newSentence);
-};
-
-var words = sentenceSplit("merry christmas");
-console.log(words);
+	var sentenceSplit = function(words)
+	{
+		var newSplit = words.split(" "),
+			newSentence = "";
+		for (i=0;i < newSplit.length;i++)
+			{
+			newSplit[i] = newSplit[i].charAt(0).toUpperCase() + 
+			newSplit[i].substring(1,newSplit[i].length).toLowerCase();
+			newSentence = newSentence +  newSplit[i] + " ";
+			
+			};
+				return newSentence;
+	};
 // 
 // 
 // 
@@ -73,21 +66,36 @@ console.log(words);
 //Does a string follow an aaa@bbb.ccc pattern like an email address?
 //
 //
-var emailCheck = function(email)
-{
-	if (email.charAt(email.length-4) === "." && email.search("@")!= -1)
-	    // for (i=0;i < email.length;i++) if (email.charAt(i)== '@')
-// if (phonenumber.length = 12 && phonenumber.charAt(7) === "-" && phonenumber.charAt(3) === "-")
-	{ 	return(email);
-	}else
+	var emailCheck = function(email)
 	{
-	return("Invalid email address");
-	};
-};
- 
-var email = emailCheck("mike@apple.com");
-console.log(email);
+		if (email.charAt(email.length-4) === "." && email.search("@")!= -1)
+		    // for (i=0;i < email.length;i++) if (email.charAt(i)== '@')
+	// if (phonenumber.length = 12 && phonenumber.charAt(7) === "-" && phonenumber.charAt(3) === "-")
+		{ 	return true;
+		}else
+		{
+		return false;
+		};
 
+	};
+ 		return {
+			"phoneNumberCheck": phoneNumberCheck,
+			"urlCheck":         urlCheck,
+			"sentenceSplit":    sentenceSplit,
+			"emailCheck":       emailCheck 
+		}
+
+
+};
 // 
 // 
-// 
+// Main logic calls
+//
+//
+ 
+var newLib = new myLibrary();
+
+console.log(newLib.phoneNumberCheck("706.454.4444"));
+console.log(newLib.urlCheck("http"));
+console.log(newLib.sentenceSplit("i love coding"));
+console.log(newLib.emailCheck("mike@apple.com"));
