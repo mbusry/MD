@@ -78,11 +78,33 @@ var myLibrary = function()
 		};
 
 	};
+//
+//
+// Convert String to a number
+//
+	var convertString = function(stringSent) 
+	{
+		return parseFloat(stringSent);
+
+	};
+
+//
+// Set the decimal place for a number
+//
+	var setDecimalPlacement = function(number,decimalPlace)
+	{
+		return number.toFixed(decimalPlace);
+	};
+
+
+
  		return {
-			"phoneNumberCheck": phoneNumberCheck,
-			"urlCheck":         urlCheck,
-			"sentenceSplit":    sentenceSplit,
-			"emailCheck":       emailCheck 
+			"phoneNumberCheck":    phoneNumberCheck,
+			"urlCheck":            urlCheck,
+			"sentenceSplit":       sentenceSplit,
+			"emailCheck":          emailCheck,
+			"convertString":       convertString,
+			"setDecimalPlacement": setDecimalPlacement
 		}
 
 
@@ -99,3 +121,5 @@ console.log(newLib.phoneNumberCheck("706.454.4444"));
 console.log(newLib.urlCheck("http"));
 console.log(newLib.sentenceSplit("i love coding"));
 console.log(newLib.emailCheck("mike@apple.com"));
+console.log(newLib.convertString("42.55apple"));
+console.log(newLib.setDecimalPlacement(4500.1,2));
