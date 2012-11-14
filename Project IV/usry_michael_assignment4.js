@@ -82,7 +82,7 @@ var myLibrary = function()
 //
 // Convert String to a number
 //
-	var convertString = function(stringSent) 
+	var convertStringToNumber = function(stringSent) 
 	{
 		return parseFloat(stringSent);
 
@@ -99,12 +99,12 @@ var myLibrary = function()
 
 
  		return {
-			"phoneNumberCheck":    phoneNumberCheck,
-			"urlCheck":            urlCheck,
-			"sentenceSplit":       sentenceSplit,
-			"emailCheck":          emailCheck,
-			"convertString":       convertString,
-			"setDecimalPlacement": setDecimalPlacement
+			"phoneNumberCheck":      phoneNumberCheck,
+			"urlCheck":              urlCheck,
+			"sentenceSplit":         sentenceSplit,
+			"emailCheck":            emailCheck,
+			"convertStringToNumber": convertStringToNumber,
+			"setDecimalPlacement":   setDecimalPlacement
 		}
 
 
@@ -121,5 +121,5 @@ console.log(newLib.phoneNumberCheck("706.454.4444"));
 console.log(newLib.urlCheck("http"));
 console.log(newLib.sentenceSplit("i love coding"));
 console.log(newLib.emailCheck("mike@apple.com"));
-console.log(newLib.convertString("42.55apple"));
+console.log(newLib.convertStringToNumber("42.55apple"));
 console.log(newLib.setDecimalPlacement(4500.1,2));
